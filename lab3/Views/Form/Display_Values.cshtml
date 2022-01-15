@@ -1,0 +1,36 @@
+﻿@model lab2.Models.FormModel
+@{
+    ViewData["Title"] = "Form1";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Dane z formularza</h1>
+
+    @Html.DisplayNameFor(model => model.Name):          @Html.DisplayFor(model => model.Name)
+    <br />
+    @Html.DisplayNameFor(model => model.how_many_times):   @Html.DisplayFor(model => model.how_many_times)
+    
+</div>
+
+@{
+    void displayName()
+            {
+               
+               if(Model.how_many_times > 0 && Model.how_many_times < 6)
+                {
+                    for(var i = 0; i < Model.how_many_times; i++)
+                    {
+                        <p>@Model.Name</p>
+                    }
+                }
+                else
+                {
+                    <p>Number is out of range 1~5</p>
+        }
+    }
+
+
+    displayName();
+}
+
+
